@@ -5,7 +5,7 @@ app.set('view engine', 'ejs');
 var access_token = "";
 
 app.get('/', function(req, res) {
-  res.render('pages/index',{client_id: clientID});
+  res.render('pages/index',{client_id: CLIENT_ID});
 });
 
 const port = process.env.PORT || 4000;

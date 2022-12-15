@@ -33,16 +33,17 @@ const App = () => {
 
  
 
-  // const loginWithGitHub = () => {
-  //   window.location.assign(
-  //     "https://github.com/login/oauth/authorize?client_id=" + CLIENT_ID
-  //   );
-  // };
+  const loginWithGitHub = () => {
+    window.open(
+      "https://github.com/login/oauth/authorize?client_id=" + CLIENT_ID
+    );
+  };
 
   return (
     <div className="App">
       <div className="App-header">
-        {/* <button onClick={loginWithGitHub}>Login with GitHub</button> */}
+        <button onClick={loginWithGitHub}>Login with GitHub</button>
+        {/* <a onClick='https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}' > Github Login</a> */}
       </div>
     </div>
   );
