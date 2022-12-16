@@ -1,15 +1,21 @@
 import React from "react";
 import "./App.css";
 import { useEffect, useState } from "react";
-
+import { useNavigate, Route, Routes,Link } from "react-router-dom";
+import SuccesPage from "./pages/succes";
+import HomePage from "./pages/HomePage";
 const CLIENT_ID = "553563f04f1015b9f426";
 
 const App = () => {
   const [token, setToken] = useState(null);
-  const [userData,setUserData]=useState({})
+  const [userData, setUserData] = useState({});
+
+  const navigate = useNavigate();
   useEffect(() => {
     if (token) {
+      console.log("testing : ");
       getUserData();
+      navigateSuccessPage();
     }
   }, [token]);
 
@@ -28,7 +34,7 @@ const App = () => {
       .then((data) => {
         console.log("data test : ", data);
         // userDataInfo
-        setUserData(data)
+        setUserData(data);
       });
   }
   async function getToken(code) {
@@ -44,6 +50,7 @@ const App = () => {
     const jsonToken = await response.json();
     const token = jsonToken.token;
     localStorage.setItem("accessToken", token);
+    console.log("token test : ", token);
     setToken(token);
   }
   useEffect(() => {
@@ -55,6 +62,11 @@ const App = () => {
       getToken(codeParam);
     }
   }, []);
+
+  const navigateSuccessPage = () => {
+    // 👇️ navigate to /
+    navigate("/succes");
+  };
 
   let url = "https://github.com/login/oauth/authorize?client_id=" + CLIENT_ID;
 
@@ -69,9 +81,17 @@ const App = () => {
       <div className="App-header">
         {/* <button onClick={loginWithGitHub}>Login with GitHub</button> */}
         {/* <a onClick='https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}' > Github Login</a> */}
+
         <a href={url}>github Testt</a>
 
-        {userData && userData.avatar_url}
+        {/* {userData && userData.avatar_url} */}
+
+       
+          <Routes>
+          <Route path="/" element={<HomePage />} />
+            <Route path="/succes" element={<SuccesPage />} />
+          </Routes>
+        
       </div>
     </div>
   );

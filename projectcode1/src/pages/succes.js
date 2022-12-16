@@ -1,9 +1,9 @@
 import React from 'react'
-
+import testPage from "../routes/Home"
 const succes = () => {
   return (
     <div>
-        <h2> Test Succes</h2>
+        <testPage/>
       
     </div>
   )

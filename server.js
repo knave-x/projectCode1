@@ -35,9 +35,11 @@ app.get("/getToken", (req, res) => {
     res.json({
       token: response.data.access_token,
     });
+   
+    
   });
+  
 });
-
 
 
 // app.get("/success", function (req, res) {
