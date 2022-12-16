@@ -1,9 +1,12 @@
 import React from "react";
-import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
-import { useNavigate, Route, Routes,Link } from "react-router-dom";
+import { useNavigate, Route, Routes, Link } from "react-router-dom";
 import SuccesPage from "./pages/succes";
 import HomePage from "./pages/HomePage";
+import NavbarC from "./pages/navbarC"; 
+import Home from "./routes/Home";
+
 const CLIENT_ID = "553563f04f1015b9f426";
 
 const App = () => {
@@ -77,22 +80,14 @@ const App = () => {
   // };
 
   return (
-    <div className="App">
-      <div className="App-header">
-        {/* <button onClick={loginWithGitHub}>Login with GitHub</button> */}
-        {/* <a onClick='https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}' > Github Login</a> */}
+    <div>
+      {/* <NavbarC url={url} /> */}
+      <a href={url}>github Testt</a>
 
-        <a href={url}>github Testt</a>
-
-        {/* {userData && userData.avatar_url} */}
-
-       
-          <Routes>
-          <Route path="/" element={<HomePage />} />
-            <Route path="/succes" element={<SuccesPage />} />
-          </Routes>
-        
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/succes" element={<SuccesPage />} />
+      </Routes>
     </div>
   );
 };
