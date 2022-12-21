@@ -1,0 +1,18 @@
+.table{
+    /* width: 32% !important; */
+    float: right !important;
+    /* margin-right: 50px; */
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.infos {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
