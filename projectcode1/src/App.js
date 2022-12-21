@@ -5,6 +5,8 @@ import { useNavigate, Route, Routes, Link } from "react-router-dom";
 
 import NavbarC from "./pages/navbarC";
 import Home from "./routes/Home";
+import Login from "./routes/Login";
+import PrivateRoutes from "./utils/PrivateRoutes";
 
 const CLIENT_ID = "553563f04f1015b9f426";
 
@@ -53,7 +55,10 @@ const App = () => {
       <NavbarC url={url} />
 
       <Routes>
+     
         <Route path="/" element={<Home token={token} />} />
+       
+        
       </Routes>
     </div>
   );
