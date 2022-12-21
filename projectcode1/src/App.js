@@ -2,8 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
 import { useNavigate, Route, Routes, Link } from "react-router-dom";
-import SuccesPage from "./pages/succes";
-import HomePage from "./pages/HomePage";
+
 import NavbarC from "./pages/navbarC";
 import Home from "./routes/Home";
 
